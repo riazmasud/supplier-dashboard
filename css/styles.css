@@ -43,6 +43,10 @@ td {
   border-bottom: 1px solid #ccc;
 }
 
+tbody tr:nth-child(even) {
+  background-color: #f2f4f7;
+}
+
 .badge {
   padding: 2px 8px;
   border-radius: 10px;
