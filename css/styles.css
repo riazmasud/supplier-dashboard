@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f6f8;
+  color: #222;
+  margin: 0;
+  padding: 0 20px 40px;
+}
+
+header {
+  padding: 24px 0 8px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: inline-block;
+  background: #2c5aa0;
+  color: #fff;
+  padding: 8px 14px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  background: #eef1f5;
+  text-align: left;
+}
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.good {
+  background-color: lightgreen;
+}
+
+.warn {
+  background-color: lightyellow;
+}
+
+.bad {
+  background-color: lightcoral;
+}

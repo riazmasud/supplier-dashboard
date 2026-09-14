@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supplier Performance Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  </head>
+  <body>
+    <h1>Supplier Performance Dashboard</h1>
+    <p class="subtitle">
+      Upload the supplier performance CSV to generate the report
+    </p>
+    <input type="file" id="csvFile" accept=".csv" />
+    <span id="fileStatus"></span>
+    <table id="supplierTable">
+      <thead>
+        <tr>
+          <th data-key="supplier_name">Supplier</th>
+          <th data-key="total_orders">Total Orders</th>
+          <th data-key="on_time_pct">On-Time Delivery %</th>
+          <th data-key="reject_rate">Reject Rate %</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <details style="margin-top: 24px">
+      <summary style="cursor: pointer; font-weight: bold">
+        About this dashboard / assumptions
+      </summary>
+      <div style="padding: 12px 0; font-size: 14px; line-height: 1.5">
+        <p>
+          The sample CSV file is located at:
+          supplier-dashboard/data/supplier_performance_granular.csv (relative to
+          wherever you extract the zip file). When you click "Choose File,"
+          navigate to that folder.
+        </p>
+        <p>
+          The uploaded file has 30,000 rows (one per order line), but the table
+          shows one row per supplier — 72 total — since everything is grouped
+          and summarized by supplier.
+        </p>
+        <p>
+          <strong>On-Time Delivery %</strong> — compares actual delivery date to
+          the date the supplier promised (not the original requested date). Open
+          and Cancelled orders are excluded since they don't have a delivery
+          date yet.
+        </p>
+        <p>
+          <strong>Reject Rate %</strong> — rejected units divided by received
+          units (not ordered units), so it reflects quality of what actually
+          arrived rather than what was originally ordered.
+        </p>
+        <p>
+          <strong>N/A</strong> shows up when a supplier doesn't have enough data
+          yet to calculate a metric.
+        </p>
+        <p>
+          Full write-up of assumptions and data quality notes is in the README
+          file included with this project.
+        </p>
+      </div>
+    </details>
+    <script src="js/app.js"></script>
+  </body>
+</html>
